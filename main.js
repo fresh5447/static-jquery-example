@@ -11,7 +11,12 @@ $('.cities-btn').click(function(){
     type: 'GET',
     url: 'https://api.meetup.com/2/cities',
     success: function(data){
-      $('.city-text').text(JSON.stringify(data));
+      $('.city-text').html('');
+      var city = data.results;
+      for (var i = 0; i < city.length; i++) {
+        var place = city[i].city;
+        $('.city-text').append('<p>' + place + '</p>')
+      }
     },
     dataType: 'jsonp',
   });
