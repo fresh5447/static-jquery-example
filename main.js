@@ -1,0 +1,1 @@
+$('.caption-text').text("helllooooooooo")
