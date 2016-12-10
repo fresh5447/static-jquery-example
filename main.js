@@ -21,3 +21,19 @@ $('.cities-btn').click(function(){
     dataType: 'jsonp',
   });
 })
+
+
+$('.reddit-btn').click(function(){
+  $('.reddit-text').text('loading....');
+  $.ajax({
+    type: 'GET',
+    url: 'http://www.reddit.com/r/aww/search.json?q=puppy&restrict_sr=true',
+    success: function(response){
+      $('.reddit-text').html('');
+      for (var i = 0; i < response.data.children.length; i++) {
+        var image = "<img src='" + response.data.children[i].data.thumbnail + "'/>";
+        $('.reddit-text').append(image);
+      }
+    }
+  });
+})
