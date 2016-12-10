@@ -1,5 +1,5 @@
 $('.alert-btn').click(function(){
   var name = $('.name-input').val();
-  alert("Hey " + name);
+  $('.name-output').text(name);
   $('.name-input').val('');
 });
