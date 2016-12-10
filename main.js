@@ -1,11 +1,5 @@
-// when click event happens
-
-$('.caption-text').text("helllooooooooo").css('background-color', 'orange');
-
-// listening when event happens
-// run this block of code
-var greeting = function(){
-  alert('heyy')
-}
-
-$('.alert-btn').click(greeting);
+$('.alert-btn').click(function(){
+  var name = $('.name-input').val();
+  alert("Hey " + name);
+  $('.name-input').val('');
+});
